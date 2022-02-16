@@ -19,16 +19,17 @@ while guesses_remaining > 0 and won == False:
     split_guess = list(guess)
     pos = 0
     for letter in split_guess:
-        if split_guess[pos] == split_word[pos]:
-            print(f"The letter {letter} is in the correct place ")
+        if split_guess == split_word:
             won = True
             break
+        elif split_guess[pos] == split_word[pos]:
+            print(f"The letter {letter} is in the correct place ")
         elif letter in split_word:
             print(f"The letter {letter} is in the word but not the correct place")
         else:
             print(f"The letter {letter} is not in the word")
         pos += 1
-    guesses_remaining -= 1
+
     print(guesses_remaining)
 
 if guesses_remaining > 0:
