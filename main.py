@@ -29,7 +29,7 @@ while guesses_remaining > 0 and won == False:
         else:
             print(f"The letter {letter} is not in the word")
         pos += 1
-
+    guesses_remaining -= 1
     print(guesses_remaining)
 
 if guesses_remaining > 0:
