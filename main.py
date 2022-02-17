@@ -3,8 +3,8 @@ from word_getter import data
 from word_size_getter import list_by_size
 
 
-def game(size, data):
-    word_list = list_by_size(data, int(size))
+def game(size, word_data):
+    word_list = list_by_size(word_data, int(size))
 
     chosen_word = random.choice(word_list)
 
@@ -14,7 +14,7 @@ def game(size, data):
 
     print(chosen_word)
     won = False
-    while guesses_remaining > 0 and won == False:
+    while guesses_remaining > 0 and not won:
         guess = input(f"Enter a {size} letter word: ").lower()
         split_guess = list(guess)
         pos = 0
@@ -41,4 +41,4 @@ def game(size, data):
         print("You Lost :(")
 
 
-game(6, data)
+game(10, data)
